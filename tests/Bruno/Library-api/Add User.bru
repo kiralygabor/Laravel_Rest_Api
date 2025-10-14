@@ -1,0 +1,27 @@
+meta {
+  name: Add User
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/api/users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 2|sa44KOasrR5yiHVYp44XBXmC7DFhmU0Dogb6FaOp0c5127b6
+}
+
+body:json {
+  {
+      "name": "Teszt2",
+      "email": "teszt2@gmail.com",
+      "password": "123"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

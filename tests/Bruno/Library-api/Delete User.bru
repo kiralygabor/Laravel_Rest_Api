@@ -1,0 +1,19 @@
+meta {
+  name: Delete User
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:8000/api/users/3
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 2|sa44KOasrR5yiHVYp44XBXmC7DFhmU0Dogb6FaOp0c5127b6
+}
+
+settings {
+  encodeUrl: true
+}

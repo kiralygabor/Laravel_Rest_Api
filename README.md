@@ -59,3 +59,26 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Endpoints
+
+| URL          | HTTP method | Auth | JSON Response     |
+| ------------ | ----------- | ---- | ----------------- |
+| /users/login | POST        |      | user's token      |
+| /users       | POST        | Y    | new user added    |
+| /users/id    | PUT         | Y    | update user       |
+| /users/id    | DELETE      | Y    | delete user       |
+
+| /users       | POST        | Y    | new user added    |
+| /users/id    | PUT         | Y    | update user       |
+| /users/id    | DELETE      | Y    | delete user       |
+
+| /users       | POST        | Y    | new user added    |
+| /users/id    | PUT         | Y    | update user       |
+| /users/id    | DELETE      | Y    | delete user       |
+
+| /users       | POST        | Y    | new user added    |
+| /users/id    | PUT         | Y    | update user       |
+| /users/id    | DELETE      | Y    | delete user       |
+
+
