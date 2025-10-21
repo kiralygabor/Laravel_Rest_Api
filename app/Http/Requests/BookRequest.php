@@ -26,8 +26,8 @@ class BookRequest extends FormRequest
                 'name' => 'nullable|string|max:255|min:3',
                 'category_id' => 'nullable|int',
                 'price' => 'nullable|numeric',
-                'publication_date' => 'nullable|datetime',
-                'edition' => 'nullable|string|min:3',
+                'publication_date' => 'nullable|string',
+                'edition' => 'nullable|string',
                 'author_id' => 'nullable|int',
                 'isbn' => 'nullable|string|max:255|min:3',
                 'cover' => 'nullable|string|max:255|min:3'
@@ -36,14 +36,14 @@ class BookRequest extends FormRequest
         }
         
         return [
-            'name' => 'nullable|string|max:255|min:3',
-            'category_id' => 'nullable|int',
-            'price' => 'nullable|numeric',
-            'publication_date' => 'nullable|datetime',
-            'edition' => 'nullable|string|min:3',
-            'author_id' => 'nullable|int',
-            'isbn' => 'nullable|string|max:255|min:3',
-            'cover' => 'nullable|string|max:255|min:3'
+            'name' => 'required|string|max:255|min:3',
+            'category_id' => 'required|int',
+            'price' => 'required|numeric',
+            'publication_date' => 'required|string',
+            'edition' => 'required|string',
+            'author_id' => 'required|int',
+            'isbn' => 'required|string|max:255|min:3',
+            'cover' => 'required|string|max:255|min:3'
         ];
     }
 }

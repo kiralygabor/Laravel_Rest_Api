@@ -1,11 +1,11 @@
 meta {
-  name: Login
+  name: Update Author
   type: http
-  seq: 1
+  seq: 9
 }
 
-post {
-  url: http://localhost:8000/api/users/login
+put {
+  url: http://localhost:8000/api/authors/11
   body: json
   auth: bearer
 }
@@ -16,8 +16,10 @@ auth:bearer {
 
 body:json {
   {
-      "email": "teszt2@gmail.com",
-      "password": "123"
+    "name": "Nagy Béla", 
+    "nationality": "Hungarian", 
+    "age": 56, 
+    "gender": "male"
   }
 }
 

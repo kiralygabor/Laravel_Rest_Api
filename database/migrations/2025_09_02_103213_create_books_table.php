@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name',255)->notNull();
             $table->unsignedBigInteger('category_id')->notNull();
             $table->integer('price')->notNull();
-            $table->date('publication_date')->notNull();
+            $table->string('publication_date')->notNull();
             $table->integer('edition')->notNull();
             $table->unsignedBigInteger('author_id')->notNull();
             $table->string('isbn', 20)->nullable()->unique()->notNull();

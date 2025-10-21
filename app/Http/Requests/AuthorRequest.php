@@ -24,7 +24,7 @@ class AuthorRequest extends FormRequest
 			if ($this->method() === 'PUT') {
 				return [
 					'name' => 'nullable|string|max:255|min:3',
-					'nationality' => 'nullable|string|min:10',
+					'nationality' => 'nullable|string|min:5',
                     'age' => 'nullable|numeric',
                     'gender' => 'nullable|string|min:3',
 				];
@@ -32,7 +32,7 @@ class AuthorRequest extends FormRequest
 			
 			return [
 				'name' => 'nullable|string|max:255|min:3',
-				'nationality' => 'nullable|string|min:10',
+				'nationality' => 'nullable|string|min:5',
                 'age' => 'nullable|numeric',
                 'gender' => 'nullable|string|min:3',
 			];

@@ -62,23 +62,20 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Endpoints
 
-| URL          | HTTP method | Auth | JSON Response     |
-| ------------ | ----------- | ---- | ----------------- |
-| /users/login | POST        |      | user's token      |
-| /users       | POST        | Y    | new user added    |
-| /users/id    | PUT         | Y    | update user       |
-| /users/id    | DELETE      | Y    | delete user       |
-
-| /users       | POST        | Y    | new user added    |
-| /users/id    | PUT         | Y    | update user       |
-| /users/id    | DELETE      | Y    | delete user       |
-
-| /users       | POST        | Y    | new user added    |
-| /users/id    | PUT         | Y    | update user       |
-| /users/id    | DELETE      | Y    | delete user       |
-
-| /users       | POST        | Y    | new user added    |
-| /users/id    | PUT         | Y    | update user       |
-| /users/id    | DELETE      | Y    | delete user       |
+| URL            | HTTP method | Auth | JSON Response      |
+| -------------- | ----------- | ---- | ------------------ |
+| /users/login   | POST        |      | user's token       |
+| /users         | POST        | Y    | new user added     |
+| /users/id      | PUT         | Y    | update user        |
+| /users/id      | DELETE      | Y    | delete user        |
+| /books         | POST        | Y    | new book added     |
+| /books/id      | PUT         | Y    | update book        |
+| /books/id      | DELETE      | Y    | delete book        |
+| /authors       | POST        | Y    | new author added   |
+| /authors/id    | PUT         | Y    | update author      |
+| /authors/id    | DELETE      | Y    | delete author      | 
+| /categories    | POST        | Y    | new category added |
+| /categoties/id | PUT         | Y    | update category    |
+| /categories/id | DELETE      | Y    | delete category    |
 
 

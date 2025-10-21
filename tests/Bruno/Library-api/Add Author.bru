@@ -1,11 +1,11 @@
 meta {
-  name: Login
+  name: Add Author
   type: http
-  seq: 1
+  seq: 8
 }
 
 post {
-  url: http://localhost:8000/api/users/login
+  url: http://localhost:8000/api/authors
   body: json
   auth: bearer
 }
@@ -16,8 +16,10 @@ auth:bearer {
 
 body:json {
   {
-      "email": "teszt2@gmail.com",
-      "password": "123"
+    "name": "Kis Béla", 
+    "nationality": "Hungarian", 
+    "age": 56, 
+    "gender": "male"
   }
 }
 

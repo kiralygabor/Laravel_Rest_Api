@@ -1,11 +1,11 @@
 meta {
-  name: Login
+  name: Add Category
   type: http
-  seq: 1
+  seq: 11
 }
 
 post {
-  url: http://localhost:8000/api/users/login
+  url: http://localhost:8000/api/categories
   body: json
   auth: bearer
 }
@@ -16,8 +16,7 @@ auth:bearer {
 
 body:json {
   {
-      "email": "teszt2@gmail.com",
-      "password": "123"
+    "name": "Horror"
   }
 }
 

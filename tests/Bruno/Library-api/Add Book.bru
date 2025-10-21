@@ -1,0 +1,32 @@
+meta {
+  name: Add Book
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8000/api/books
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 3|f6OxvSATwHCoNzUbLk9GyFovwKJnBSmBjg8SD9os7c29d64c
+}
+
+body:json {
+  {
+    "name": "Valami",
+    "category_id": 2,
+    "price": 9999,
+    "publication_date": "2025-10-21",
+    "edition": "1",
+    "author_id": 1,
+    "isbn": "978-1-00001-001-8",
+    "cover": "covers/book99.jpg"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
