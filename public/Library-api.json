@@ -488,6 +488,41 @@
           }
         }
       }
+    },
+    {
+      "type": "http",
+      "name": "Delete Author's Book",
+      "filename": "Delete Author's Book.bru",
+      "seq": 15,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "request": {
+        "url": "http://localhost:8000/api/authors/1/books/21",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "4|pZjvpJRPO4bihWZD92rfcDY3O2ia3I3dIumRLm8ybd2f2cd9"
+          }
+        }
+      }
     }
   ],
   "environments": [],

@@ -23,6 +23,7 @@ Route::get('/authors/{id}/books', [AuthorController::class, 'books']);
 Route::post('/authors', [AuthorController::class, 'store'])->middleware('auth:sanctum');
 Route::put('/authors/{id}', [AuthorController::class, 'update'])->middleware('auth:sanctum');
 Route::delete('/authors/{id}', [AuthorController::class, 'destroy'])->middleware('auth:sanctum');
+Route::delete('/authors/{id}/books/{book_id}', [AuthorController::class, 'deleteBook'])->middleware('auth:sanctum');
 
 Route::get('/books', [BookController::class, 'index']); 
 Route::post('/books', [BookController::class, 'store'])->middleware('auth:sanctum');

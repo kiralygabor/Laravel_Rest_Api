@@ -36,6 +36,36 @@ class AuthorController extends Controller
         ]);
     }
 
+    /**
+     * @api {get} /authors/:id/books Szerző könyveinek lekérdezése
+     * @apiName GetAuthorBooks
+     * @apiGroup Author
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {Number} id A szerző egyedi azonosítója.
+     *
+     * @apiSuccess {Object} author A szerző adatai.
+     * @apiSuccess {Object[]} books A szerző könyveinek listája.
+     * @apiSuccessExample {json} Success-Response:
+     * HTTP/1.1 200 OK
+     * {
+     *   "author": {
+     *     "id": 1,
+     *     "name": "Jókai Mór"
+     *   },
+     *   "books": [
+     *     {
+     *       "id": 5,
+     *       "title": "Az arany ember",
+     *       "published_at": "1872-01-01",
+     *       "created_at": "2025-10-14T12:00:00Z",
+     *       "updated_at": "2025-10-14T12:00:00Z"
+     *     }
+     *   ]
+     * }
+     *
+     * @apiError (404) NotFound A szerző nem található.
+     */
     public function books($id)
     {
         $author = Author::findOrFail($id);
@@ -51,6 +81,45 @@ class AuthorController extends Controller
     }
 
     /**
+     * @api {delete} /authors/:id/books/:book_id Egy szerző könyvének törlése
+     * @apiName DeleteAuthorBook
+     * @apiGroup Author
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {Number} id A szerző egyedi azonosítója.
+     * @apiParam {Number} book_id A törlendő könyv azonosítója.
+     *
+     * @apiSuccess {String} message Törlés visszaigazolása.
+     * @apiSuccess {Number} book_id A törölt könyv azonosítója.
+     * @apiSuccessExample {json} Success-Response:
+     * HTTP/1.1 200 OK
+     * {
+     *   "message": "Book deleted successfully",
+     *   "book_id": 5
+     * }
+     *
+     * @apiError (404) NotFound A könyv nem található a megadott szerzőnél.
+     */
+    public function deleteBook($id, $book_id)
+    {
+        $author = Author::findOrFail($id);
+        $book = $author->books()->where('id', $book_id)->first();
+ 
+        if (!$book) {
+            return response()->json([
+                'error' => 'Book not found for this author',
+            ], 404);
+        }
+ 
+        $book->delete();
+ 
+        return response()->json([
+            'message' => 'Book deleted successfully',
+            'book_id' => $book_id,
+        ]);
+    }
+
+    /**
      * @api {post} /authors Új szerző létrehozása
      * @apiName CreateAuthor
      * @apiGroup Author
@@ -60,7 +129,7 @@ class AuthorController extends Controller
      *
      * @apiSuccess {Object} author A létrehozott szerző adatai.
      * @apiSuccessExample {json} Success-Response:
-     * HTTP/1.1 200 OK
+     * HTTP/1.1 201 Created
      * {
      *   "author": {
      *     "id": 2,
@@ -78,7 +147,7 @@ class AuthorController extends Controller
 
         return response()->json([
             'author' => $author,
-        ]);
+        ], 201);
     }
 
     /**
