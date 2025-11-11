@@ -36,6 +36,20 @@ class AuthorController extends Controller
         ]);
     }
 
+    public function books($id)
+    {
+        $author = Author::findOrFail($id);
+        $books = $author->books;
+ 
+        return response()->json([
+            'author' => [
+                'id' => $author->id,
+                'name' => $author->name,
+            ],
+            'books' => $books,
+        ]);
+    }
+
     /**
      * @api {post} /authors Új szerző létrehozása
      * @apiName CreateAuthor

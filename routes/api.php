@@ -18,7 +18,8 @@ Route::post('/users', [UserController::class, 'store'])->middleware('auth:sanctu
 Route::put('/users/{id}', [UserController::class, 'update'])->middleware('auth:sanctum');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->middleware('auth:sanctum'); 
 
-Route::get('/authors', [AuthorController::class, 'index']); 
+Route::get('/authors', [AuthorController::class, 'index']);
+Route::get('/authors/{id}/books', [AuthorController::class, 'books']); 
 Route::post('/authors', [AuthorController::class, 'store'])->middleware('auth:sanctum');
 Route::put('/authors/{id}', [AuthorController::class, 'update'])->middleware('auth:sanctum');
 Route::delete('/authors/{id}', [AuthorController::class, 'destroy'])->middleware('auth:sanctum');
