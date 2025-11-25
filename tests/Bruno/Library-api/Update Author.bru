@@ -1,0 +1,28 @@
+meta {
+  name: Update Author
+  type: http
+  seq: 9
+}
+
+put {
+  url: http://localhost:8000/api/authors/11
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 3|f6OxvSATwHCoNzUbLk9GyFovwKJnBSmBjg8SD9os7c29d64c
+}
+
+body:json {
+  {
+    "name": "Nagy Béla", 
+    "nationality": "Hungarian", 
+    "age": 56, 
+    "gender": "male"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

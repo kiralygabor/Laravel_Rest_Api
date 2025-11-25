@@ -1,0 +1,32 @@
+meta {
+  name: Update Book
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://localhost:8000/api/books/3
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 3|f6OxvSATwHCoNzUbLk9GyFovwKJnBSmBjg8SD9os7c29d64c
+}
+
+body:json {
+  {
+    "name": "Valami Más",
+    "category_id": 3,
+    "price": 999,
+    "publication_date": "2025-10-20",
+    "edition": "4",
+    "author_id": 3,
+    "isbn": "978-1-00001-001-9",
+    "cover": "covers/book98.jpg"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

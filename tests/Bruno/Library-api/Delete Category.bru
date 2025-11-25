@@ -1,0 +1,19 @@
+meta {
+  name: Delete Category
+  type: http
+  seq: 13
+}
+
+delete {
+  url: http://localhost:8000/api/categories/11
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: 3|f6OxvSATwHCoNzUbLk9GyFovwKJnBSmBjg8SD9os7c29d64c
+}
+
+settings {
+  encodeUrl: true
+}

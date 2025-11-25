@@ -1,0 +1,28 @@
+meta {
+  name: Add Author
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8000/api/authors
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 3|f6OxvSATwHCoNzUbLk9GyFovwKJnBSmBjg8SD9os7c29d64c
+}
+
+body:json {
+  {
+    "name": "Kis Béla", 
+    "nationality": "Hungarian", 
+    "age": 56, 
+    "gender": "male"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

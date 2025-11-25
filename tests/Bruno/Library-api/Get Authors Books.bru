@@ -1,0 +1,20 @@
+meta {
+  name: Get Authors Books
+  type: http
+  seq: 14
+}
+
+get {
+  url: http://localhost:8000/api/authors/1/books
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 4|pZjvpJRPO4bihWZD92rfcDY3O2ia3I3dIumRLm8ybd2f2cd9
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

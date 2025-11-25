@@ -1,0 +1,25 @@
+meta {
+  name: Add Category
+  type: http
+  seq: 11
+}
+
+post {
+  url: http://localhost:8000/api/categories
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 3|f6OxvSATwHCoNzUbLk9GyFovwKJnBSmBjg8SD9os7c29d64c
+}
+
+body:json {
+  {
+    "name": "Horror"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
