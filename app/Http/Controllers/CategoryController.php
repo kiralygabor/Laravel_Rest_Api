@@ -28,12 +28,21 @@ class CategoryController extends Controller
      *   ]
      * }
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::all();
+        $query = Category::select('*');
+ 
+        $needle = $request->get('needle');
+        if ($needle) {
+            $query->where('name', 'like', "%{$needle}%");
+        }
+ 
+        $categories = $query->orderBy('name')->get();
+ 
         return response()->json([
             'categories' => $categories,
         ]);
+ 
     }
 
     /**

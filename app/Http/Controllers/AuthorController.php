@@ -28,12 +28,23 @@ class AuthorController extends Controller
      *   ]
      * }
      */
-    public function index()
+   
+
+    public function index(Request $request)
     {
-        $authors = Author::all();
+        $query = Author::select('*');
+ 
+        $needle = $request->get('needle');
+        if ($needle) {
+            $query->where('name', 'like', "%{$needle}%");
+        }
+ 
+        $authors = $query->orderBy('name')->get();
+ 
         return response()->json([
             'authors' => $authors,
         ]);
+ 
     }
 
     /**

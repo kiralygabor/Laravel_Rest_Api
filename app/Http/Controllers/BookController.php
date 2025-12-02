@@ -29,14 +29,24 @@ class BookController extends Controller
      *   ]
      * }
      */
-    public function index()
+ 
+
+    public function index(Request $request)
     {
-        $books = Book::all();
+        $query = Book::select('*');
+ 
+        $needle = $request->get('needle');
+        if ($needle) {
+            $query->where('name', 'like', "%{$needle}%");
+        }
+ 
+        $books = $query->orderBy('name')->get();
+ 
         return response()->json([
             'books' => $books,
         ]);
+ 
     }
-
     /**
      * @api {post} /books Új könyv létrehozása
      * @apiName CreateBook

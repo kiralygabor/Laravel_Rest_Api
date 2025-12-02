@@ -12,7 +12,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/users/login', [UserController::class, 'login']); 
+Route::post('/users/login', [UserController::class, 'login'])->name("login"); 
 Route::get('/users', [UserController::class, 'index'])->middleware('auth:sanctum');
 Route::post('/users', [UserController::class, 'store'])->middleware('auth:sanctum');
 Route::put('/users/{id}', [UserController::class, 'update'])->middleware('auth:sanctum');
