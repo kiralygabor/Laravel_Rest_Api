@@ -1,0 +1,23 @@
+meta {
+  name: getBooks
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api}}/users/login
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+    "email": "teszt@example.com",
+    "password": "123"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
